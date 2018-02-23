@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Client Details</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous"
+		th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+	
+	<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"
+		th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Client Details <b th:if="${client.deleted}">  -  DELETED RECORD</b></h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Name:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${client.name}">Name</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Country:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${client.country}">Country</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>City:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${client.city}">City</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Street name and number:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${client.address}">Address</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>ZIP Code:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${client.zip}">ZIP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary" th:href="@{/}">Client List</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
